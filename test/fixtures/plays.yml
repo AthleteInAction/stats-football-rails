@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  game_id: 1
+  sequence_id: 1
+  key: MyString
+  end_x: 1
+  end_y: 1
+  player_a: 1
+  player_b: 1
+  penalty_key: MyString
+  penalty_distance: 1
+  penalty_offset: false
+  pos_id: 1
+  tackles: MyString
+  sacks: MyString
+
+two:
+  game_id: 1
+  sequence_id: 1
+  key: MyString
+  end_x: 1
+  end_y: 1
+  player_a: 1
+  player_b: 1
+  penalty_key: MyString
+  penalty_distance: 1
+  penalty_offset: false
+  pos_id: 1
+  tackles: MyString
+  sacks: MyString
