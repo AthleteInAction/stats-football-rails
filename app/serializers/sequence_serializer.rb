@@ -9,7 +9,7 @@ class SequenceSerializer < ActiveModel::Serializer
   	:down,
   	:fd,
   	:start_x,
-  	:stary_y,
+  	:start_y,
   	:replay,
   	:created_at,
   	:updated_at
