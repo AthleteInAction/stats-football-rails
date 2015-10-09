@@ -62,8 +62,6 @@ module Api
   		# =================================================
   		def create
 
-        puts params
-
   			@sequence = Sequence.new sequence_params
 
   			if @sequence.save
@@ -112,7 +110,9 @@ module Api
       end
 
       def plist
-        [:game_id,:pos_id,:qtr,:start_x,:start_y,:key,:down,:fd,:replay,:created_at,:updated_at]
+        
+        [:game_id,:team_id,:qtr,:start_x,:start_y,:key,:down,:fd,:replay,:created_at,:updated_at]
+
       end
 
   	end

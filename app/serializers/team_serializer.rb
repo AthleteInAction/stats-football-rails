@@ -4,23 +4,10 @@ class TeamSerializer < ActiveModel::Serializer
   	:id,
   	:name,
   	:short,
-  	:roster,
+  	:primary,
+  	:secondary,
   	:created_at,
   	:updated_at
   )
-
-  def roster
-
-  	if object.roster
-
-  		object.roster.split(',').map { |n| n.to_i }.sort
-
-  	else
-
-  		[]
-
-  	end
-
-  end
 
 end

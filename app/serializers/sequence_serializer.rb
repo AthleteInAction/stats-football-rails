@@ -3,7 +3,7 @@ class SequenceSerializer < ActiveModel::Serializer
   attributes(
   	:id,
   	:game_id,
-  	:pos_id,
+  	:team_id,
   	:qtr,
   	:key,
   	:down,
@@ -11,6 +11,7 @@ class SequenceSerializer < ActiveModel::Serializer
   	:start_x,
   	:start_y,
   	:replay,
+    :flagged,
   	:created_at,
   	:updated_at
   	)

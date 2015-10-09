@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
 
       # API INSERT
+			resources :penalty,path: 'penaltys'
 			resources :play,path: 'plays'
 			resources :sequence,path: 'sequences'
 			resources :game,path: 'games'

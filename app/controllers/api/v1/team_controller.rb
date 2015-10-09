@@ -110,7 +110,7 @@ module Api
       end
 
       def plist
-        [:name,:short,:roster,:created_at,:updated_at]
+        [:name,:short,:primary,:secondary,:created_at,:updated_at]
       end
 
   	end

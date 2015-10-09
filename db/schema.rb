@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150911215909) do
+ActiveRecord::Schema.define(version: 20151009192606) do
 
   create_table "games", force: true do |t|
     t.datetime "start_time"
@@ -19,15 +19,30 @@ ActiveRecord::Schema.define(version: 20150911215909) do
     t.integer  "home_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "right_home", default: true
+  end
+
+  create_table "penalties", force: true do |t|
+    t.integer  "game_id"
+    t.integer  "sequence_id"
+    t.integer  "distance"
+    t.integer  "end_x"
+    t.string   "enforcement"
+    t.integer  "player"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "team_id"
   end
 
   create_table "players", force: true do |t|
     t.integer  "team_id"
-    t.integer  "jersey"
     t.string   "first_name"
     t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "used",       default: 0
+    t.integer  "number"
+    t.integer  "game_id"
   end
 
   create_table "plays", force: true do |t|
@@ -38,19 +53,16 @@ ActiveRecord::Schema.define(version: 20150911215909) do
     t.integer  "end_y"
     t.integer  "player_a"
     t.integer  "player_b"
-    t.string   "penalty_key"
-    t.integer  "penalty_distance"
-    t.boolean  "penalty_offset"
-    t.integer  "pos_id"
     t.string   "tackles"
     t.string   "sacks"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "team_id"
   end
 
   create_table "sequences", force: true do |t|
     t.integer  "game_id"
-    t.integer  "pos_id"
+    t.integer  "team_id"
     t.integer  "qtr"
     t.string   "key"
     t.integer  "down"
@@ -60,6 +72,7 @@ ActiveRecord::Schema.define(version: 20150911215909) do
     t.boolean  "replay"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "flagged",    default: false
   end
 
   create_table "teams", force: true do |t|
@@ -67,7 +80,8 @@ ActiveRecord::Schema.define(version: 20150911215909) do
     t.string   "short"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "roster"
+    t.string   "primary"
+    t.string   "secondary"
   end
 
 end

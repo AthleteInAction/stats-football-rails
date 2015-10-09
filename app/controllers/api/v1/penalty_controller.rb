@@ -1,8 +1,8 @@
 module Api
   module V1
-  	class GameController < ApplicationController
+  	class PenaltyController < ApplicationController
 
-      before_action :set_game, only: [:show, :update, :destroy]
+      before_action :set_penalty, only: [:show, :update, :destroy]
 
   		respond_to :json
 
@@ -13,12 +13,12 @@ module Api
 
         new_params = params.permit plist
 
-        q = "SELECT * FROM games"
+        q = "SELECT * FROM penaltys"
         q << Tools.query(new_params)
 
-  			@games = Game.find_by_sql q
+  			@penaltys = Penalty.find_by_sql q
 
-  			respond_with @games,root: :games
+  			respond_with @penaltys,root: :penaltys
 
   		end
   		# =================================================
@@ -30,7 +30,7 @@ module Api
   		# =================================================
   		def show
 
-  			respond_with @game
+  			respond_with @penalty
 
   		end
   		# =================================================
@@ -42,13 +42,13 @@ module Api
   		# =================================================
   		def update
 
-        if @game.update(game_params)
+        if @penalty.update(penalty_params)
 
-          render json: @game,status: :ok
+          render json: @penalty,status: :ok
 
         else
 
-          render json: {error: true,errors: @game.errors},status: :unprocessable_entity
+          render json: {error: true,errors: @penalty.errors},status: :unprocessable_entity
 
         end
 
@@ -62,15 +62,15 @@ module Api
   		# =================================================
   		def create
 
-  			@game = Game.new game_params
+  			@penalty = Penalty.new penalty_params
 
-  			if @game.save
+  			if @penalty.save
 
-  				render json: @game,status: :created
+  				render json: @penalty,status: :created
 
   			else
 
-  				render json: {error: true,errors: @game.errors},status: :unprocessable_entity
+  				render json: {error: true,errors: @penalty.errors},status: :unprocessable_entity
 
   			end
 
@@ -84,13 +84,13 @@ module Api
   		# =================================================
   		def destroy
 
-        if @game.destroy
+        if @penalty.destroy
 
-          render json: {game: {id: params[:id].to_i}},status: :ok
+          render json: {penalty: {id: params[:id].to_i}},status: :ok
 
         else
 
-          render json: {error: true,errors: @game.errors},status: :unprocessable_entity
+          render json: {error: true,errors: @penalty.errors},status: :unprocessable_entity
 
         end
 
@@ -100,17 +100,27 @@ module Api
 
       private
       # Use callbacks to share common setup or constraints between actions.
-      def set_game
-        @game = Game.find params[:id]
+      def set_penalty
+        @penalty = Penalty.find params[:id]
       end
 
       # Never trust parameters from the scary internet, only allow the white list through.
-      def game_params
-        params.require(:game).permit plist
+      def penalty_params
+        params.require(:penalty).permit plist
       end
 
       def plist
-        [:away_id,:home_id,:right_home,:created_at,:updated_at]
+        [
+          :game_id,
+          :sequence_id,
+          :team_id,
+          :distance,
+          :end_x,
+          :enforcement,
+          :player,
+          :created_at,
+          :updated_at
+        ]
       end
 
   	end
