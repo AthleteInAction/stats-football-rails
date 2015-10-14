@@ -132,4 +132,26 @@ module Tools
 
   end
 
+  # def valid_json? json_  
+  #   begin  
+  #     JSON.parse(json_)  
+  #     return true  
+  #   rescue Exception => e  
+  #     return false  
+  #   end  
+  # end
+  # def JP val
+    
+  #   if val.instance_of?(Array) || val.instance_of?(Hash) || valid_json?(val)
+      
+  #     puts JSON.pretty_generate val
+      
+  #   else
+      
+  #     puts val
+      
+  #   end
+    
+  end
+
 end

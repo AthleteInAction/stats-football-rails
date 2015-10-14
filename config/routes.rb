@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
 
       # API INSERT
+			resources :stats_passing,path: 'stats_passings'
 			resources :penalty,path: 'penaltys'
 			resources :play,path: 'plays'
 			resources :sequence,path: 'sequences'
@@ -12,7 +13,12 @@ Rails.application.routes.draw do
 			resources :player,path: 'players'
 			resources :team,path: 'teams'
 
+			resources :summary
+			resources :stats
+
     end
   end
+
+  resources :team
 
 end

@@ -60,3 +60,6 @@ gem "rmagick"
 gem "carrierwave"
 gem 'cloudinary'
 gem 'kaminari'
+gem 'prawn'
+gem 'prawn-table'
+gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
