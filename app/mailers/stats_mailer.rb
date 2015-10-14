@@ -14,3 +14,4 @@ class StatsMailer < ActionMailer::Base
 	end
 
 end
+# mysql://b306689bcbf7c9:fce90ced@us-cdbr-iron-east-03.cleardb.net/heroku_90f11396b12dec4?reconnect=true
