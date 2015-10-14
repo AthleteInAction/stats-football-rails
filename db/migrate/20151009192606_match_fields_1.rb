@@ -4,7 +4,7 @@ class MatchFields1 < ActiveRecord::Migration
   	# TEAM
   	# ==========================================
   	# ==========================================
-  	remove_column :teams,:color
+  	# remove_column :teams,:color
   	# remove_column :teams,:object
   	add_column :teams,:primary,:string
   	add_column :teams,:secondary,:string
