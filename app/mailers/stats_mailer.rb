@@ -2,7 +2,7 @@ class StatsMailer < ActionMailer::Base
 
 	require 'prawn/table'
 	  
-	default from: "notifications@wambl.com"
+	default from: "stats-mailer@wambl.com"
 
 	def stats data
 
