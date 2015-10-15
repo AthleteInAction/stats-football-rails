@@ -68,26 +68,9 @@ class SummaryPdf < Prawn::Document
 
     end
 
-    data[:scoring].keys.each do |q|
+    keys = data[:scoring].keys.sort
 
-      puts data[:scoring]["#{q}"].to_a.map { |item|
-
-        case item[:key]
-        when "run"
-
-          "#{item[:team][:short]} #{item[:type]} #{item[:time]}: ##{item[:player_a]} 13 yard run"
-
-        when "pass"
-
-          "#{item[:team][:short]} #{item[:type]} #{item[:time]}: ##{item[:player_a]} pass to ##{item[:player_b]} for 13 yards"
-
-        else
-
-          "HELLO!"
-
-        end
-
-      }
+    keys.each do |q|
 
       move_down 20
 
