@@ -168,7 +168,7 @@ class StatsPdf < Prawn::Document
 
           t.width = bounds.width
           t.cell_style = {border_width: 0}
-          t.row(0).style background_color: Prawn::Graphics::Color.rgb2hex([57,140,183])
+          t.row(0).style background_color: Prawn::Graphics::Color.rgb2hex([51,208,247])
           t.row(0).style text_color: Prawn::Graphics::Color.rgb2hex([255,255,255])
 
         end
@@ -200,7 +200,7 @@ class StatsPdf < Prawn::Document
 
           t.width = bounds.width
           t.cell_style = {border_width: 0}
-          t.row(0).style background_color: Prawn::Graphics::Color.rgb2hex([57,140,183])
+          t.row(0).style background_color: Prawn::Graphics::Color.rgb2hex([51,208,247])
           t.row(0).style text_color: Prawn::Graphics::Color.rgb2hex([255,255,255])
 
         end
@@ -241,7 +241,7 @@ class StatsPdf < Prawn::Document
 
           t.width = bounds.width
           t.cell_style = {border_width: 0}
-          t.row(0).style background_color: Prawn::Graphics::Color.rgb2hex([57,140,183])
+          t.row(0).style background_color: Prawn::Graphics::Color.rgb2hex([254,45,124])
           t.row(0).style text_color: Prawn::Graphics::Color.rgb2hex([255,255,255])
 
         end
@@ -273,7 +273,7 @@ class StatsPdf < Prawn::Document
 
           t.width = bounds.width
           t.cell_style = {border_width: 0}
-          t.row(0).style background_color: Prawn::Graphics::Color.rgb2hex([57,140,183])
+          t.row(0).style background_color: Prawn::Graphics::Color.rgb2hex([254,45,124])
           t.row(0).style text_color: Prawn::Graphics::Color.rgb2hex([255,255,255])
 
         end
@@ -314,7 +314,7 @@ class StatsPdf < Prawn::Document
 
           t.width = bounds.width
           t.cell_style = {border_width: 0}
-          t.row(0).style background_color: Prawn::Graphics::Color.rgb2hex([57,140,183])
+          t.row(0).style background_color: Prawn::Graphics::Color.rgb2hex([254,45,124])
           t.row(0).style text_color: Prawn::Graphics::Color.rgb2hex([255,255,255])
 
         end
@@ -346,7 +346,7 @@ class StatsPdf < Prawn::Document
 
           t.width = bounds.width
           t.cell_style = {border_width: 0}
-          t.row(0).style background_color: Prawn::Graphics::Color.rgb2hex([57,140,183])
+          t.row(0).style background_color: Prawn::Graphics::Color.rgb2hex([254,45,124])
           t.row(0).style text_color: Prawn::Graphics::Color.rgb2hex([255,255,255])
 
         end
