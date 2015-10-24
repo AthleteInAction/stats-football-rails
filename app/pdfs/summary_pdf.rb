@@ -114,6 +114,10 @@ class SummaryPdf < Prawn::Document
 
           ["<b>#{item[:team][:short]}</b> #{item[:type]}:   (#{item[:time]}) <b>##{item[:player_a]}</b> #{item[:gain]} yard punt return"]
 
+        when "fumble_return"
+
+          ["<b>#{item[:team][:short]}</b> #{item[:type]}:   (#{item[:time]}) <b>##{item[:player_a]}</b> #{item[:gain]} yard fumble return"]
+
         else
 
           s = "<b>#{item[:team][:short]}</b>:"
