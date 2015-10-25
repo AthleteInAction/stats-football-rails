@@ -125,6 +125,8 @@ class SummaryPdf < Prawn::Document
           s << ":   (#{item[:time]})"
           s << " <b>##{item[:player_a]}</b>" if item[:player_a]
 
+          [s]
+
         end
 
       }
